@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotePad - Your Digital Notebook</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="app-title">
+                    <i class="fas fa-sticky-note"></i>
+                    NotePad
+                </h1>
+                <div class="header-actions">
+                    <button class="btn btn-primary" id="newNoteBtn">
+                        <i class="fas fa-plus"></i>
+                        New Note
+                    </button>
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search notes...">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h3>All Notes</h3>
+                    <span class="note-count" id="noteCount">0 notes</span>
+                </div>
+                <div class="categories">
+                    <div class="category-item active" data-category="all">
+                        <i class="fas fa-list"></i>
+                        All Notes
+                    </div>
+                    <div class="category-item" data-category="work">
+                        <i class="fas fa-briefcase"></i>
+                        Work
+                    </div>
+                    <div class="category-item" data-category="personal">
+                        <i class="fas fa-user"></i>
+                        Personal
+                    </div>
+                    <div class="category-item" data-category="ideas">
+                        <i class="fas fa-lightbulb"></i>
+                        Ideas
+                    </div>
+                </div>
+                <div class="notes-list" id="notesList">
+                    <!-- Notes will be dynamically added here -->
+                </div>
+            </aside>
+
+            <!-- Note Editor -->
+            <section class="note-editor">
+                <div class="editor-header">
+                    <input type="text" id="noteTitle" placeholder="Note title..." class="note-title-input">
+                    <div class="editor-actions">
+                        <select id="categorySelect" class="category-select">
+                            <option value="personal">Personal</option>
+                            <option value="work">Work</option>
+                            <option value="ideas">Ideas</option>
+                        </select>
+                        <button class="btn btn-danger" id="deleteNoteBtn" style="display: none;">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                        <button class="btn btn-success" id="saveNoteBtn">
+                            <i class="fas fa-save"></i>
+                            Save
+                        </button>
+                    </div>
+                </div>
+                <div class="editor-content">
+                    <textarea id="noteContent" placeholder="Start writing your note..."></textarea>
+                </div>
+                <div class="editor-footer">
+                    <div class="note-info">
+                        <span id="noteDate"></span>
+                        <span id="noteWordCount">0 words</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Welcome Screen -->
+        <div class="welcome-screen" id="welcomeScreen">
+            <div class="welcome-content">
+                <i class="fas fa-sticky-note welcome-icon"></i>
+                <h2>Welcome to NotePad</h2>
+                <p>Start creating your first note by clicking the "New Note" button or selecting an existing note from the sidebar.</p>
+                <button class="btn btn-primary" id="welcomeNewNoteBtn">
+                    <i class="fas fa-plus"></i>
+                    Create Your First Note
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
